@@ -1,10 +1,10 @@
 "use client";
 
-import { useState } from "react";
 import Button from "@/components/ui/Button";
 import Field from "@/components/ui/Field";
 import FormNotice from "@/components/ui/FormNotice";
 import Textarea from "@/components/ui/Textarea";
+import { useState } from "react";
 
 const initialValues = {
   name: "",
@@ -92,10 +92,6 @@ export default function ContactForm({ notice }) {
       />
       {showNotice ? <FormNotice tone="warning">{notice}</FormNotice> : null}
       <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <p className="text-sm leading-7 text-soot-600">
-          This form validates locally and keeps the submission state honest until
-          delivery is connected.
-        </p>
         <Button size="lg" type="submit">
           Review inquiry
         </Button>

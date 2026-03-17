@@ -2,8 +2,9 @@
 
 import { motion, useReducedMotion } from "motion/react";
 
-export default function ScrollIndicator() {
+export default function ScrollIndicator({ tone = "dark" }) {
   const reduceMotion = useReducedMotion();
+  const light = tone === "light";
 
   return (
     <div className="flex justify-center pt-6 pb-2">
@@ -13,11 +14,21 @@ export default function ScrollIndicator() {
         animate={{ opacity: 1 }}
         transition={{ delay: 1.2, duration: 0.8 }}
       >
-        <span className="text-[9px] font-semibold uppercase tracking-[0.3em] text-sand-200/50">
+        <span
+          className={
+            light
+              ? "text-[9px] font-semibold uppercase tracking-[0.3em] text-soot-700/60"
+              : "text-[9px] font-semibold uppercase tracking-[0.3em] text-sand-200/50"
+          }
+        >
           Scroll
         </span>
         <motion.div
-          className="h-8 w-px bg-gradient-to-b from-gold-400/70 to-transparent"
+          className={
+            light
+              ? "h-8 w-px bg-linear-to-b from-copper-500/60 to-transparent"
+              : "h-8 w-px bg-linear-to-b from-gold-400/70 to-transparent"
+          }
           animate={
             reduceMotion
               ? {}

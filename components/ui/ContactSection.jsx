@@ -26,8 +26,7 @@ export default function ContactSection({
   return (
     <section className="scroll-mt-24" id={id}>
       <div className="grid lg:grid-cols-2">
-        {/* ---- Dark left panel ---- */}
-        <div className="section-dark relative overflow-hidden px-6 py-16 sm:px-10 sm:py-20 lg:flex lg:flex-col lg:justify-center lg:px-14 lg:py-24">
+        <div className="section-light relative overflow-hidden px-6 py-16 sm:px-10 sm:py-20 lg:flex lg:flex-col lg:justify-center lg:px-14 lg:py-24">
           <Glow
             color="gold"
             size="22rem"
@@ -41,41 +40,40 @@ export default function ContactSection({
 
           <div className="relative z-10 max-w-lg lg:ml-auto lg:mr-0">
             <Reveal>
-              <p className="eyebrow-light">{heading.eyebrow}</p>
-              <h2 className="mt-4 font-heading text-[2rem] leading-[1.08] text-sand-50 sm:text-[2.5rem] lg:text-[3rem]">
+              <p className="eyebrow">{heading.eyebrow}</p>
+              <h2 className="mt-4 font-heading text-[2rem] leading-[1.08] text-soot-950 sm:text-[2.5rem] lg:text-[3rem]">
                 {heading.title}
               </h2>
               {heading.description ? (
-                <p className="mt-5 max-w-md text-[1rem] leading-8 text-sand-200/60 sm:text-[1.04rem]">
+                <p className="mt-5 max-w-md text-[1rem] leading-8 text-soot-700/85 sm:text-[1.04rem]">
                   {heading.description}
                 </p>
               ) : null}
             </Reveal>
 
-            {/* Contact methods — clean inline rows, no cards */}
             <Reveal delay={0.08}>
-              <div className="mt-10 space-y-5 border-t border-gold-300/10 pt-8">
+              <div className="mt-10 space-y-5 border-t border-soot-950/10 pt-8">
                 {contact.methods.map((method) => {
                   const Icon = methodIcons[method.kind] ?? Mail;
 
                   return (
                     <div key={method.label} className="flex items-start gap-4">
-                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-gold-400/10 text-gold-400">
+                      <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl bg-soot-950/5 text-copper-600">
                         <Icon className="h-4 w-4" />
                       </div>
                       <div className="min-w-0">
-                        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-sand-200/40">
+                        <p className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-soot-700/55">
                           {method.label}
                         </p>
                         {method.href ? (
                           <a
-                            className="mt-1 block text-[0.95rem] leading-7 text-sand-100 transition hover:text-gold-300"
+                            className="mt-1 block text-[0.95rem] leading-7 text-soot-900 transition hover:text-copper-700"
                             href={method.href}
                           >
                             {method.value}
                           </a>
                         ) : (
-                          <p className="mt-1 text-[0.95rem] leading-7 text-sand-200/70">
+                          <p className="mt-1 text-[0.95rem] leading-7 text-soot-700/90">
                             {method.value}
                           </p>
                         )}
@@ -88,7 +86,6 @@ export default function ContactSection({
           </div>
         </div>
 
-        {/* ---- Light right panel ---- */}
         <div className="section-light px-6 py-16 sm:px-10 sm:py-20 lg:flex lg:flex-col lg:justify-center lg:px-14 lg:py-24">
           <div className="relative z-10 max-w-lg">
             <Reveal delay={0.06}>

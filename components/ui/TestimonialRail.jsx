@@ -63,7 +63,7 @@ export default function TestimonialRail({ heading, testimonials }) {
         className="-right-16 bottom-0 opacity-15"
       />
 
-      <div className="relative z-10 mx-auto w-full max-w-[1420px] px-0 py-16 sm:py-20 lg:py-24">
+      <div className="relative z-10 mx-auto w-full max-w-355 px-0 py-16 sm:py-20 lg:py-24">
         <Reveal className="mb-12 px-4 sm:px-6 lg:px-8">
           <SectionHeading
             align="center"
@@ -102,6 +102,7 @@ export default function TestimonialRail({ heading, testimonials }) {
             }}
             onAutoplayTimeLeft={handleAutoplayTimeLeft}
             onSlideChange={handleSlideChange}
+            className="*:items-center"
           >
             {testimonials.map((testimonial) => (
               <SwiperSlide className="h-auto" key={testimonial.name}>
@@ -110,16 +111,8 @@ export default function TestimonialRail({ heading, testimonials }) {
             ))}
           </Swiper>
 
-          {/* Pagination + autoplay progress */}
           <div className="mt-10 flex flex-col items-center gap-3">
             <div className="testimonial-pagination flex justify-center gap-2" />
-
-            <div className="relative h-[2px] w-20 overflow-hidden rounded-full bg-sand-200/8">
-              <div
-                ref={progressRef}
-                className="tst-progress absolute inset-y-0 left-0 rounded-full bg-gold-400/50"
-              />
-            </div>
           </div>
         </div>
       </div>
