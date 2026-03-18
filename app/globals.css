@@ -215,59 +215,69 @@
   Height is locked to the shortest card by JS.
 */
 .testimonial-slider {
-  --tst-min-w: 260px;
-  --tst-max-w: 340px;
+  --tst-slide-w: min(86vw, 24rem);
 }
 
 @media (min-width: 520px) {
   .testimonial-slider {
-    --tst-min-w: 280px;
-    --tst-max-w: 400px;
+    --tst-slide-w: min(78vw, 27rem);
   }
 }
 
 @media (min-width: 768px) {
   .testimonial-slider {
-    --tst-min-w: 300px;
-    --tst-max-w: 460px;
+    --tst-slide-w: min(66vw, 29rem);
   }
 }
 
 @media (min-width: 1024px) {
   .testimonial-slider {
-    --tst-min-w: 320px;
-    --tst-max-w: 500px;
+    --tst-slide-w: min(52vw, 31rem);
   }
 }
 
 @media (min-width: 1280px) {
   .testimonial-slider {
-    --tst-min-w: 340px;
-    --tst-max-w: 540px;
+    --tst-slide-w: min(42vw, 33rem);
   }
 }
 
+.testimonial-slider .swiper {
+  padding-inline: 1.25rem;
+}
+
+.testimonial-slider .swiper-wrapper {
+  align-items: stretch;
+}
+
 .testimonial-slider .tst-slide {
+  display: flex;
   height: auto;
-  width: calc(
-    var(--tst-min-w) + var(--content-ratio) * (var(--tst-max-w) - var(--tst-min-w))
-  );
+  width: var(--tst-slide-w);
+}
+
+.testimonial-slider .tst-slide>* {
+  width: 100%;
 }
 
 .testimonial-slider .swiper-slide {
-  opacity: 0.35;
-  filter: blur(1px);
+  opacity: 0.42;
+  filter: saturate(0.78);
   transition:
+    transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
     opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+  transform: scale(0.95);
+  will-change: transform, opacity, filter;
 }
 
 .testimonial-slider .swiper-slide-active {
   opacity: 1;
-  filter: blur(0);
+  filter: saturate(1);
+  transform: scale(1);
 }
 
-.testimonial-slider .swiper-slide-active>article {
+.testimonial-slider .swiper-slide-active .testimonial-card {
   border-color: rgba(207, 174, 64, 0.15);
   box-shadow:
     0 0 40px rgba(207, 174, 64, 0.06),
@@ -276,8 +286,15 @@
 
 .testimonial-slider .swiper-slide-prev,
 .testimonial-slider .swiper-slide-next {
-  opacity: 0.6;
-  filter: blur(0);
+  opacity: 0.72;
+  filter: saturate(0.92);
+  transform: scale(0.98);
+}
+
+@media (max-width: 639px) {
+  .testimonial-slider .swiper {
+    padding-inline: 0.75rem;
+  }
 }
 
 /* Pagination bullets — bigger touch targets on mobile */
@@ -310,11 +327,6 @@
   background-clip: content-box;
 }
 
-/* Autoplay progress */
-.tst-progress {
-  transition: width 0.1s linear;
-}
-
 @media (prefers-reduced-motion: reduce) {
   html:focus-within {
     scroll-behavior: auto;
@@ -327,5 +339,9 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
+  }
+
+  .testimonial-slider .swiper-slide {
+    transform: none !important;
   }
 }

@@ -3,16 +3,13 @@
 import Glow from "@/components/ui/Glow";
 import Reveal from "@/components/ui/Reveal";
 import SectionHeading from "@/components/ui/SectionHeading";
-import { useCallback, useEffect, useMemo, useRef } from "react";
-import { Autoplay, Keyboard, Pagination } from "swiper/modules";
+import { useId } from "react";
+import { A11y, Autoplay, Keyboard, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 function TestimonialCard({ testimonial }) {
   return (
-    <article
-      data-tst-card
-      className="flex h-full flex-col gap-4 overflow-hidden rounded-2xl border border-sand-100/6 bg-soot-900/55 px-5 py-6 backdrop-blur-sm transition-all duration-500 sm:gap-5 sm:px-7 sm:py-8"
-    >
+    <article className="testimonial-card flex h-full min-h-80 flex-col gap-4 overflow-hidden rounded-2xl border border-sand-100/6 bg-soot-900/55 px-5 py-6 backdrop-blur-sm transition-all duration-500 sm:min-h-96 sm:gap-5 sm:px-7 sm:py-8">
       <div className="flex items-center justify-between gap-4">
         <span className="rounded-full bg-copper-900/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] text-copper-300">
           {testimonial.flag}
@@ -33,64 +30,10 @@ function TestimonialCard({ testimonial }) {
 }
 
 export default function TestimonialRail({ heading, testimonials }) {
-  const progressRef = useRef(null);
-  const swiperRef = useRef(null);
-  const railRef = useRef(null);
-
-  // ---- Width proportional to content length ----
-  const widthRatios = useMemo(() => {
-    const lengths = testimonials.map((t) => t.quote.length);
-    const min = Math.min(...lengths);
-    const max = Math.max(...lengths);
-    if (max === min) return testimonials.map(() => 0.5);
-    return lengths.map((len) => (len - min) / (max - min));
-  }, [testimonials]);
-
-  // ---- Sync all cards to the shortest card's height ----
-  const syncHeights = useCallback(() => {
-    const el = railRef.current;
-    if (!el) return;
-
-    const cards = el.querySelectorAll("[data-tst-card]");
-    if (!cards.length) return;
-
-    // Reset so we measure natural heights
-    cards.forEach((c) => (c.style.height = ""));
-
-    requestAnimationFrame(() => {
-      const heights = Array.from(cards).map((c) => c.offsetHeight);
-      const minH = Math.min(...heights);
-
-      cards.forEach((c) => (c.style.height = `${minH}px`));
-
-      // Tell Swiper to recalculate positions after height change
-      if (swiperRef.current) swiperRef.current.update();
-    });
-  }, []);
-
-  useEffect(() => {
-    const ro = new ResizeObserver(syncHeights);
-    if (railRef.current) ro.observe(railRef.current);
-    return () => ro.disconnect();
-  }, [syncHeights]);
-
-  const handleAutoplayTimeLeft = useCallback((_swiper, _time, progress) => {
-    if (progressRef.current) {
-      progressRef.current.style.width = `${(1 - progress) * 100}%`;
-    }
-  }, []);
-
-  const handleSlideChange = useCallback(() => {
-    if (progressRef.current) {
-      progressRef.current.style.transition = "none";
-      progressRef.current.style.width = "0%";
-      requestAnimationFrame(() => {
-        if (progressRef.current) {
-          progressRef.current.style.transition = "";
-        }
-      });
-    }
-  }, []);
+  const paginationId = useId().replace(/:/g, "");
+  const paginationClassName = `testimonial-pagination-${paginationId}`;
+  const canAutoplay = testimonials.length > 1;
+  const canLoop = testimonials.length > 3;
 
   return (
     <section className="section-dark relative overflow-hidden">
@@ -116,45 +59,51 @@ export default function TestimonialRail({ heading, testimonials }) {
           />
         </Reveal>
 
-        <div className="testimonial-slider" ref={railRef}>
+        <div className="testimonial-slider">
           <Swiper
-            modules={[Autoplay, Keyboard, Pagination]}
+            modules={[A11y, Autoplay, Keyboard, Pagination]}
             pagination={{
               clickable: true,
-              el: ".testimonial-pagination",
+              el: `.${paginationClassName}`,
               bulletClass: "tst-bullet",
               bulletActiveClass: "tst-bullet-active",
             }}
-            autoplay={{
-              delay: 5000,
-              disableOnInteraction: false,
-              pauseOnMouseEnter: true,
-            }}
-            keyboard={{ enabled: true }}
-            loop={testimonials.length > 2}
+            autoplay={
+              canAutoplay
+                ? {
+                    delay: 5600,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: true,
+                    waitForTransition: true,
+                  }
+                : false
+            }
+            keyboard={{ enabled: true, onlyInViewport: true }}
+            a11y={{ enabled: true }}
+            loop={canLoop}
+            loopAdditionalSlides={
+              canLoop ? Math.min(testimonials.length, 3) : 0
+            }
             slidesPerView="auto"
             centeredSlides
-            grabCursor
-            speed={700}
-            spaceBetween={16}
+            centerInsufficientSlides={!canLoop}
+            grabCursor={canAutoplay}
+            observer
+            observeParents
+            watchSlidesProgress
+            speed={850}
+            spaceBetween={18}
             breakpoints={{
               520: { spaceBetween: 20 },
               768: { spaceBetween: 24 },
               1024: { spaceBetween: 28 },
               1280: { spaceBetween: 32 },
             }}
-            onSwiper={(s) => {
-              swiperRef.current = s;
-              syncHeights();
-            }}
-            onAutoplayTimeLeft={handleAutoplayTimeLeft}
-            onSlideChange={handleSlideChange}
           >
             {testimonials.map((testimonial, index) => (
               <SwiperSlide
                 className="tst-slide"
-                key={testimonial.name}
-                style={{ "--content-ratio": widthRatios[index] }}
+                key={`${testimonial.name}-${index}`}
               >
                 <TestimonialCard testimonial={testimonial} />
               </SwiperSlide>
@@ -162,7 +111,9 @@ export default function TestimonialRail({ heading, testimonials }) {
           </Swiper>
 
           <div className="mt-8 flex flex-col items-center gap-3 sm:mt-10">
-            <div className="testimonial-pagination flex justify-center gap-2.5" />
+            <div
+              className={`${paginationClassName} testimonial-pagination flex justify-center gap-2.5`}
+            />
           </div>
         </div>
       </div>

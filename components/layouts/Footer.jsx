@@ -49,17 +49,6 @@ export default function Footer() {
                 {siteContent.authorProfile.name}
               </p>
             </div>
-            {siteContent.assets.authorPortrait ? (
-              <div className="relative ml-auto h-12 w-12 overflow-hidden rounded-full border border-gold-300/20 bg-soot-900 shadow-[0_4px_12px_rgba(0,0,0,0.3)]">
-                <Image
-                  alt={siteContent.assets.authorPortrait.alt}
-                  className="object-cover object-top"
-                  fill
-                  sizes="48px"
-                  src={siteContent.assets.authorPortrait.src}
-                />
-              </div>
-            ) : null}
           </div>
           <p className="text-sm leading-7 text-sand-100/60">
             {siteContent.footer.blurb}
