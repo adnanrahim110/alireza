@@ -14,13 +14,13 @@ export default function ContactHero() {
       secondaryAction={hero.secondaryAction}
       title={hero.title}
     >
-      <div className="space-y-5">
-        <IconBadge label="Inquiry-ready contact" tone="copper" />
-        <div className="rounded-[1.35rem] border border-copper-300/35 bg-sand-50/70 p-5 backdrop-blur-sm sm:p-6">
-          <p className="text-sm leading-7 text-soot-700/90">
-            A focused contact entry point for publishing, collaboration, or
-            event conversations, with a form design that stays clear about its
-            current non-live status.
+      <div className="space-y-4 sm:space-y-5">
+        <IconBadge label="Reader-Centered" tone="copper" />
+        <div className="rounded-[1.35rem] border border-copper-300/35 bg-sand-50/70 p-4 backdrop-blur-sm sm:p-6">
+          <p className="text-[0.85rem] leading-6 text-soot-700/90 sm:text-sm sm:leading-7">
+            A welcoming point for readers to share thoughts, questions, or
+            reflections on the story, with a form designed to stay clear and
+            usable before going fully live.
           </p>
         </div>
       </div>

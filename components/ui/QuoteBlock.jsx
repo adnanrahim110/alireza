@@ -16,7 +16,7 @@ export default function QuoteBlock({ quote, variant = "card", className }) {
   return (
     <blockquote
       className={cn(
-        "relative overflow-hidden rounded-[1.75rem] border border-gold-300/40 bg-gradient-to-br from-gold-100/72 via-sand-50 to-sand-50 px-6 py-7 text-[1.02rem] leading-8 text-soot-800 shadow-[0_18px_45px_rgba(104,57,17,0.08)] sm:px-8 sm:py-9",
+        "relative overflow-hidden rounded-[1.75rem] border border-gold-300/40 bg-gradient-to-br from-gold-100/72 via-sand-50 to-sand-50 px-5 py-6 text-[0.95rem] leading-7 text-soot-800 shadow-[0_18px_45px_rgba(104,57,17,0.08)] sm:px-8 sm:py-9 sm:text-[1.02rem] sm:leading-8",
         className,
       )}
     >

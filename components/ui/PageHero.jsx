@@ -12,9 +12,9 @@ function OrnamentalDivider({ className }) {
       className={cn("flex items-center justify-center gap-3", className)}
       aria-hidden="true"
     >
-      <span className="h-px w-10 bg-gradient-to-r from-transparent to-gold-400/50 sm:w-14" />
+      <span className="h-px w-10 bg-linear-to-r from-transparent to-gold-400/50 sm:w-14" />
       <span className="h-1.5 w-1.5 rotate-45 border border-gold-400/60 bg-gold-400/20" />
-      <span className="h-px w-10 bg-gradient-to-l from-transparent to-gold-400/50 sm:w-14" />
+      <span className="h-px w-10 bg-linear-to-l from-transparent to-gold-400/50 sm:w-14" />
     </div>
   );
 }
@@ -31,6 +31,7 @@ export default function PageHero({
   dark = false,
   className,
   children,
+  boxClass = "",
 }) {
   const reduceMotion = useReducedMotion();
 
@@ -45,7 +46,6 @@ export default function PageHero({
         className,
       )}
     >
-      {/* ---- Atmospheric layers ---- */}
       <Glow
         color="gold"
         size="44rem"
@@ -54,98 +54,119 @@ export default function PageHero({
       <Glow
         color="copper"
         size="32rem"
-        className="-bottom-40 -left-24 opacity-14"
+        className="-bottom-40 -left-24 opacity-14 glow-hide-mobile"
       />
       <Glow
         color="gold"
         size="24rem"
-        className="-bottom-32 -right-20 opacity-12"
+        className="-bottom-32 -right-20 opacity-12 glow-hide-mobile"
       />
       <Glow
         color="sand"
         size="20rem"
-        className="right-1/4 top-1/3 opacity-10"
+        className="right-1/4 top-1/3 opacity-10 glow-hide-mobile"
       />
 
-      {/* Subtle grid overlay */}
       <div className="map-grid pointer-events-none absolute inset-0 opacity-10" />
 
-      {/* Top edge accent */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-400/40 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-gold-400/40 to-transparent" />
 
-      {/* Vertical center line decoration */}
       <div
         aria-hidden="true"
-        className="pointer-events-none absolute left-1/2 top-0 h-full w-px -translate-x-1/2"
+        className="pointer-events-none absolute left-1/2 top-0 hidden h-full w-px -translate-x-1/2 sm:block"
       >
-        <div className="h-16 w-full bg-gradient-to-b from-gold-400/30 to-transparent sm:h-24" />
-        <div className="absolute bottom-0 h-16 w-full bg-gradient-to-t from-gold-400/20 to-transparent sm:h-24" />
+        <div className="h-16 w-full bg-linear-to-b from-gold-400/30 to-transparent sm:h-24" />
+        <div className="absolute bottom-0 h-16 w-full bg-linear-to-t from-gold-400/20 to-transparent sm:h-24" />
       </div>
 
-      {/* ---- Main content ---- */}
-      <div className="relative z-10 mx-auto w-full max-w-[1320px] px-5 py-28 sm:px-8 sm:py-32 lg:px-10 lg:py-36">
+      <div className="relative z-10 mx-auto w-full max-w-330 px-5 py-20 sm:px-8 sm:py-28 lg:px-10 lg:py-36">
         <div className="flex flex-col items-center text-center">
-          {/* Ornamental divider */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, ...stagger(0), ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.6,
+              ...stagger(0),
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
-            <OrnamentalDivider className="mb-7" />
+            <OrnamentalDivider className="mb-6 sm:mb-7" />
           </motion.div>
 
-          {/* Eyebrow */}
           <motion.p
-            className="text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-gold-300/90"
+            className="text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-gold-300/90 sm:text-[0.68rem] sm:tracking-[0.32em]"
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ...stagger(1), ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.6,
+              ...stagger(1),
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             {eyebrow}
           </motion.p>
 
-          {/* Title */}
           <motion.h1
-            className="mt-7 max-w-[18ch] font-heading text-[2.6rem] leading-[0.94] text-sand-50 sm:text-[3.8rem] lg:text-[5rem]"
+            className="mt-6 max-w-[20ch] font-heading text-[2.2rem] leading-[0.94] text-sand-50 sm:mt-7 sm:text-[3.4rem] lg:text-[5rem]"
             initial={reduceMotion ? false : { opacity: 0, y: 26 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, ...stagger(2), ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.8,
+              ...stagger(2),
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             {title}
           </motion.h1>
 
-          {/* Accent line below title */}
           <motion.div
-            className="mt-8 flex items-center gap-2"
+            className="mt-6 flex items-center gap-2 sm:mt-8"
             aria-hidden="true"
             initial={reduceMotion ? false : { opacity: 0, scaleX: 0 }}
             animate={{ opacity: 1, scaleX: 1 }}
-            transition={{ duration: 0.7, ...stagger(3), ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.7,
+              ...stagger(3),
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
-            <span className="h-px w-16 bg-gradient-to-r from-transparent to-copper-500/50 sm:w-24" />
-            <span className="h-[3px] w-[3px] rounded-full bg-copper-400/70" />
-            <span className="h-px w-16 bg-gradient-to-l from-transparent to-copper-500/50 sm:w-24" />
+            <span className="h-px w-12 bg-linear-to-r from-transparent to-copper-500/50 sm:w-24" />
+            <span className="h-0.75 w-0.75 rounded-full bg-copper-400/70" />
+            <span className="h-px w-12 bg-linear-to-l from-transparent to-copper-500/50 sm:w-24" />
           </motion.div>
 
-          {/* Description */}
           <motion.p
-            className="mt-7 max-w-2xl text-[1rem] leading-[1.85] text-sand-200/65 sm:text-[1.08rem]"
+            className="mt-6 max-w-2xl text-[0.95rem] leading-[1.8] text-sand-200/65 sm:mt-7 sm:text-[1.08rem] sm:leading-[1.85]"
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, ...stagger(4), ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.7,
+              ...stagger(4),
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             {description}
           </motion.p>
 
-          {/* Buttons */}
           <motion.div
-            className="mt-10 flex flex-col items-center gap-3 sm:flex-row"
+            className="mt-8 flex w-full flex-col items-center gap-3 px-2 sm:mt-10 sm:w-auto sm:flex-row sm:px-0"
             initial={reduceMotion ? false : { opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ...stagger(5), ease: [0.16, 1, 0.3, 1] }}
+            transition={{
+              duration: 0.65,
+              ...stagger(5),
+              ease: [0.16, 1, 0.3, 1],
+            }}
           >
             {primaryAction ? (
-              <Button href={primaryAction.href} size="lg" tone="gold" glow>
+              <Button
+                href={primaryAction.href}
+                size="lg"
+                tone="gold"
+                glow
+                dark
+                className="w-full sm:w-auto"
+              >
                 {primaryAction.label}
               </Button>
             ) : null}
@@ -155,34 +176,38 @@ export default function PageHero({
                 size="lg"
                 variant="ghost"
                 tone="gold"
-                className="border border-sand-200/12 text-sand-200/70 hover:bg-sand-100/6 hover:text-sand-50"
+                dark
+                className="w-full sm:w-auto"
               >
                 {secondaryAction.label}
               </Button>
             ) : null}
           </motion.div>
 
-          {/* Stats */}
           {stats.length ? (
             <motion.div
-              className="mt-14 flex flex-wrap items-center justify-center gap-0"
+              className="mt-10 flex flex-wrap items-center justify-center gap-0 sm:mt-14"
               initial={reduceMotion ? false : { opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, ...stagger(6), ease: [0.16, 1, 0.3, 1] }}
+              transition={{
+                duration: 0.7,
+                ...stagger(6),
+                ease: [0.16, 1, 0.3, 1],
+              }}
             >
               {stats.map((stat, idx) => (
                 <div key={stat.label} className="flex items-center">
                   {idx > 0 && (
                     <span
-                      className="mx-5 h-8 w-px bg-gold-400/15 sm:mx-7"
+                      className="mx-4 h-8 w-px bg-gold-400/15 sm:mx-7"
                       aria-hidden="true"
                     />
                   )}
                   <div className="text-center">
-                    <p className="font-heading text-[1.8rem] leading-none text-gold-400 sm:text-[2.2rem]">
+                    <p className="font-heading text-[1.5rem] leading-none text-gold-400 sm:text-[2.2rem]">
                       {stat.value}
                     </p>
-                    <p className="mt-1.5 text-[9px] uppercase tracking-[0.18em] text-sand-200/40 sm:text-[10px]">
+                    <p className="mt-1.5 text-[9px] uppercase tracking-[0.16em] text-sand-200/40 sm:text-[10px] sm:tracking-[0.18em]">
                       {stat.label}
                     </p>
                   </div>
@@ -191,7 +216,6 @@ export default function PageHero({
             </motion.div>
           ) : null}
 
-          {/* Note */}
           {note ? (
             <motion.p
               className="mt-6 max-w-lg text-[0.82rem] leading-7 text-sand-200/30"
@@ -203,11 +227,15 @@ export default function PageHero({
             </motion.p>
           ) : null}
 
-          {/* Visual panel / children */}
           {children ? (
             <motion.div
-              className="relative z-10 mt-16 w-full max-w-lg"
-              initial={reduceMotion ? false : { opacity: 0, y: 30, scale: 0.97 }}
+              className={cn(
+                "relative z-10 mt-12 w-full max-w-lg sm:mt-16",
+                boxClass,
+              )}
+              initial={
+                reduceMotion ? false : { opacity: 0, y: 30, scale: 0.97 }
+              }
               animate={{ opacity: 1, y: 0, scale: 1 }}
               transition={{
                 duration: 0.9,
@@ -215,15 +243,26 @@ export default function PageHero({
                 ease: [0.16, 1, 0.3, 1],
               }}
             >
-              {/* Corner accents */}
-              <div className="pointer-events-none absolute -left-2 -top-2 h-6 w-6 border-l border-t border-gold-400/25" aria-hidden="true" />
-              <div className="pointer-events-none absolute -right-2 -top-2 h-6 w-6 border-r border-t border-gold-400/25" aria-hidden="true" />
-              <div className="pointer-events-none absolute -bottom-2 -left-2 h-6 w-6 border-b border-l border-gold-400/25" aria-hidden="true" />
-              <div className="pointer-events-none absolute -bottom-2 -right-2 h-6 w-6 border-b border-r border-gold-400/25" aria-hidden="true" />
+              <div
+                className="pointer-events-none absolute -left-2 -top-2 hidden h-6 w-6 border-l border-t border-gold-400/25 sm:block"
+                aria-hidden="true"
+              />
+              <div
+                className="pointer-events-none absolute -right-2 -top-2 hidden h-6 w-6 border-r border-t border-gold-400/25 sm:block"
+                aria-hidden="true"
+              />
+              <div
+                className="pointer-events-none absolute -bottom-2 -left-2 hidden h-6 w-6 border-b border-l border-gold-400/25 sm:block"
+                aria-hidden="true"
+              />
+              <div
+                className="pointer-events-none absolute -bottom-2 -right-2 hidden h-6 w-6 border-b border-r border-gold-400/25 sm:block"
+                aria-hidden="true"
+              />
 
-              <div className="paper-panel-dark border-gold-300/12 p-6 sm:p-8">
+              <div className="paper-panel-dark border-gold-300/12 p-5 sm:p-8">
                 <div
-                  className="pointer-events-none absolute inset-0 bg-gradient-to-b from-gold-400/4 via-transparent to-copper-500/4"
+                  className="pointer-events-none absolute inset-0 bg-linear-to-b from-gold-400/4 via-transparent to-copper-500/4"
                   aria-hidden="true"
                 />
                 {children}
@@ -235,8 +274,7 @@ export default function PageHero({
         {fullScreen ? <ScrollIndicator tone="dark" /> : null}
       </div>
 
-      {/* Bottom fade */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-soot-950 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-28 bg-linear-to-t from-soot-950 to-transparent" />
     </section>
   );
 }

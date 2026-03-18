@@ -27,8 +27,7 @@ export default function HomeHero() {
         };
 
   return (
-    <section className="section-dark relative flex min-h-[100svh] flex-col items-center justify-center overflow-hidden">
-      {/* Spotlight glow converging on the book */}
+    <section className="section-dark relative flex min-h-svh flex-col items-center justify-center overflow-hidden">
       <Glow
         color="gold"
         size="44rem"
@@ -37,28 +36,20 @@ export default function HomeHero() {
       <Glow
         color="copper"
         size="22rem"
-        className="-bottom-20 -left-20 opacity-20"
+        className="-bottom-20 -left-20 opacity-20 glow-hide-mobile"
       />
       <Glow
         color="sand"
         size="18rem"
-        className="-top-16 -right-16 opacity-12"
+        className="-top-16 -right-16 opacity-12 glow-hide-mobile"
       />
 
-      {/* Top edge shimmer */}
-      <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold-300/40 to-transparent" />
+      <div className="absolute inset-x-0 top-0 h-px bg-linear-to-r from-transparent via-gold-300/40 to-transparent" />
 
-      <div className="relative z-10 w-full max-w-[1320px] px-4 py-20 sm:px-6 lg:px-8">
-        {/* Eyebrow */}
-        <motion.p className="eyebrow-light text-center" {...stagger(0)}>
-          {hero.eyebrow}
-        </motion.p>
-
-        {/* ---- Centerpiece: Book with giant watermark ---- */}
+      <div className="relative z-10 w-full max-w-330 px-5 py-20 sm:px-6 lg:px-8">
         <div className="relative mt-10 flex flex-col items-center sm:mt-12">
-          {/* Background watermark title — huge, behind the book for depth */}
           <motion.span
-            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none font-heading text-[8rem] leading-none text-sand-100/[0.03] sm:text-[12rem] lg:text-[16rem] xl:text-[19rem]"
+            className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 select-none font-heading text-[8rem] leading-none text-sand-100/3 sm:text-[12rem] lg:text-[16rem] xl:text-[19rem]"
             initial={reduceMotion ? false : { opacity: 0, scale: 1.15 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1.3, delay: 0.1, ease }}
@@ -67,7 +58,6 @@ export default function HomeHero() {
             {siteContent.bookProfile.title}
           </motion.span>
 
-          {/* The book — the hero of the hero */}
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, scale: 0.85, y: 44 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -83,29 +73,26 @@ export default function HomeHero() {
           </motion.div>
         </div>
 
-        {/* ---- Title ---- */}
         <motion.h1
-          className="mx-auto mt-10 max-w-3xl text-center font-heading text-[2.2rem] leading-[0.94] text-sand-50 sm:mt-12 sm:text-[3rem] lg:text-[4rem]"
+          className="mx-auto mt-10 max-w-5xl text-center font-heading text-[2.2rem] leading-[0.94] text-sand-50 sm:mt-12 sm:text-[3rem] lg:text-[4rem]"
           {...stagger(0)}
         >
           {hero.title}
         </motion.h1>
 
-        {/* Description */}
         <motion.p
-          className="mx-auto mt-6 max-w-xl text-center text-[1rem] leading-8 text-sand-200/65 sm:text-[1.06rem]"
+          className="mx-auto mt-6 max-w-4xl text-center text-[1rem] leading-8 text-sand-200/65 sm:text-[1.06rem]"
           {...stagger(1)}
         >
           {hero.description}
         </motion.p>
 
-        {/* CTAs */}
         <motion.div
-          className="mt-8 flex flex-col items-center justify-center gap-3 sm:flex-row"
+          className="mt-8 flex flex-col items-center justify-center gap-3 px-2 sm:flex-row sm:px-0"
           {...stagger(2)}
         >
           {hero.primaryAction ? (
-            <Button href={hero.primaryAction.href} size="lg" tone="gold" glow>
+            <Button href={hero.primaryAction.href} size="lg" tone="gold" glow dark className="w-full sm:w-auto">
               {hero.primaryAction.label}
             </Button>
           ) : null}
@@ -113,15 +100,16 @@ export default function HomeHero() {
             <Button
               href={hero.secondaryAction.href}
               size="lg"
-              variant="ghost"
-              className="border border-sand-200/15 text-sand-200/80 hover:bg-sand-100/8 hover:text-sand-50"
+              variant="outline"
+              tone="soot"
+              dark
+              className="w-full sm:w-auto"
             >
               {hero.secondaryAction.label}
             </Button>
           ) : null}
         </motion.div>
 
-        {/* Stats strip */}
         <motion.div
           className="mx-auto mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 border-t border-gold-300/10 pt-6"
           {...stagger(3)}
@@ -138,7 +126,6 @@ export default function HomeHero() {
           ))}
         </motion.div>
 
-        {/* Note */}
         {hero.note ? (
           <motion.p
             className="mx-auto mt-4 max-w-lg text-center text-sm leading-7 text-sand-200/30"
@@ -151,8 +138,7 @@ export default function HomeHero() {
         <ScrollIndicator />
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-soot-950 to-transparent" />
+      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-linear-to-t from-soot-950 to-transparent" />
     </section>
   );
 }

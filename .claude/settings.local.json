@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(xargs cat:*)",
+      "Bash(npx next:*)",
+      "WebFetch(domain:docs.google.com)",
+      "Bash(pip install:*)",
+      "Bash(pip3 install:*)",
+      "Bash(where python:*)",
+      "Bash(py --version)",
+      "Bash(py -m pip install pymupdf)",
+      "Bash(/c/Users/HP/AppData/Local/Microsoft/WindowsApps/python.exe -m pip install pymupdf)",
+      "Bash(npx -y pdf-parse --help)",
+      "Bash(npm list:*)",
+      "Bash(node:*)",
+      "Bash(cd /tmp)",
+      "Bash(npm init:*)",
+      "Bash(npm install:*)",
+      "Bash(mkdir -p /c/Users/HP/AppData/Local/Temp/pdf-extract)",
+      "Read(//c/Users/HP/AppData/Local/Temp/**)"
+    ]
+  }
+}

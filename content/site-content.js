@@ -2,25 +2,27 @@ export const siteContent = {
   siteName: "PAI",
   authorProfile: {
     name: "Alireza Kakoee",
-    role: "Author of immersive, world-led speculative fiction",
+    role: "Author of Immersive Speculative Worlds",
     summary:
-      "Alireza Kakoee writes fiction shaped by architecture, ritual, labor, and the quiet machinery of power. His stories linger on crafted environments and the people who must learn how to live inside them.",
+      "Alireza Kakoee creates speculative fiction that examines the delicate balance between human life and the spaces we inhabit. His stories reveal how environments, shaped by culture, labor, and tradition, influence the choices and struggles of those who live within them.",
     focus: [
-      "Literary fantasy with a ceremonial, old-world atmosphere",
-      "Detailed worldbuilding rooted in systems, craft, and landscape",
-      "Narratives where place transforms the people who enter it",
+      "The Power of Observation: Alireza's characters often understand their world not through direct explanation, but by observing, reflecting, and experiencing the environment around them.",
+      "A Slow Unraveling of Place: His narratives emphasize a gradual discovery of place, where the true nature of a world is revealed piece by piece.",
+      "Tension through Daily Life: The ordinary routines of the characters — walking the streets, performing tasks, and engaging with others — create a subtle tension that builds throughout the narrative.",
     ],
   },
   bookProfile: {
     title: "PAI",
     subtitle:
-      "A ceremonial literary fantasy about exile, belonging, and the moment a legend steps out of stone.",
+      "Where the desert ends, the story begins. Golden statues, silver windmills, and a mask that changes everything.",
     blurb:
-      "When Arjan reaches a mysterious city ruled by bells, gates, windmills, and ritual order, he expects only to pass through. Instead, the city draws him into its systems, its labor, and its myths until the arrival of Ripu forces everything into the open.",
+      "The road had ended, but the silence had not. The city moved in ways I could not yet follow. And still, I chose to step forward.",
     details: [
-      "A traveler enters a meticulously ordered city built on bells, temples, and engineered ritual.",
-      "What begins as an outsider's journey becomes a slow-burning story of belonging, labor, and political tension.",
-      "The climax pivots from intimate observation to mythic confrontation when Ripu appears in living form.",
+      "A road across dry land and rising paths leads toward a place that is not fully known at arrival.",
+      "Gates, structures, and movement form a space that feels ordered, yet not completely explained.",
+      "Understanding comes through attention, through what is seen, heard, and repeated over time.",
+      "Daily life follows a rhythm shaped by work, movement, and the sound of bells.",
+      "At certain times, the rhythm shifts, and something more deliberate is felt without being named.",
     ],
   },
   nav: [
@@ -31,9 +33,8 @@ export const siteContent = {
   ],
   footer: {
     blurb:
-      "A warm, world-first showcase for a book built on ritual, architecture, and slow-burning tension.",
-    note:
-      "This version uses drafted copy and temporary testimonial placeholders to support early client review.",
+      "A journey through dust and stone leads to a city where bells carry across the air, and every wall, every light, and every quiet system feels carefully made.",
+    note: "PAI by Alireza Kakoee. All rights reserved.",
   },
   contact: {
     methods: [
@@ -47,55 +48,63 @@ export const siteContent = {
       {
         kind: "briefcase",
         label: "Inquiry types",
-        value: "Publishing, interview, reading, and collaboration conversations",
+        value:
+          "Publishing, interviews, events, collaborations, or conversations about the story",
         href: null,
       },
       {
         kind: "clock",
         label: "Availability",
-        value: "Contact details and live form delivery are still being finalized",
+        value:
+          "Your words are waiting for the moment their journey begins",
         href: null,
       },
     ],
     formNotice:
-      "The form experience is designed and validated, but online submission is not connected yet. Replace the placeholder contact details and wire the backend before launch.",
+      "Thank you for reaching out. Your message has been received — your words are waiting for the moment their journey begins.",
   },
   testimonials: [
     {
       quote:
-        "Temporary placeholder: replace this with a real early-reader response about the novel's atmosphere and slow-burn worldbuilding.",
-      name: "Advance Reader Placeholder",
-      role: "Temporary testimonial",
-      flag: "Replace before launch",
+        "This book takes you on an unforgettable journey where every twist and turn brings you closer to understanding a world full of mystery and transformation. A must-read for anyone who loves immersive fiction!",
+      name: "Collin John",
+      role: "Reader",
+      flag: "Review",
     },
     {
       quote:
-        "Temporary placeholder: use a genuine quote here about the book's sense of place, ritual detail, or literary tone.",
-      name: "Editorial Endorsement Placeholder",
-      role: "Temporary testimonial",
-      flag: "Replace before launch",
+        "From the first page, the world Alireza Kakoee creates pulls you in. The story is both gripping and thought-provoking, with every detail adding depth to the characters' experiences. It's a story of exploration, not just of place, but of what it means to change and be shaped by the world around you.",
+      name: "Charlene Hope",
+      role: "Reader",
+      flag: "Review",
     },
     {
       quote:
-        "Temporary placeholder: insert an authentic line from a reviewer, beta reader, or editor once approvals are ready.",
-      name: "Review Placeholder",
-      role: "Temporary testimonial",
-      flag: "Replace before launch",
+        "This book is a fascinating exploration of how places shape the people who live in them. If you love stories where the setting is as important as the plot, you'll love this one.",
+      name: "Tina Holland",
+      role: "Reader",
+      flag: "Review",
     },
     {
       quote:
-        "Temporary placeholder: a final slot reserved for a quote focused on character, imagery, or the book's distinct voice.",
-      name: "Launch Quote Placeholder",
-      role: "Temporary testimonial",
-      flag: "Replace before launch",
+        "The world-building in this book is absolutely stunning. Every corner of the city, every ritual, and every moment feels purposeful and alive. It's a slow burn that keeps you hooked, drawing you into a world where every action holds meaning and every setting feels like a character in its own right.",
+      name: "Juan Barry",
+      role: "Reader",
+      flag: "Review",
+    },
+    {
+      quote:
+        "A beautiful blend of storytelling and reflection — this is one of those books that leaves a lasting impression. Highly recommended!",
+      name: "Lucenius Rob",
+      role: "Reader",
+      flag: "Review",
     },
   ],
   home: {
     hero: {
-      eyebrow: "A literary fantasy shaped by bells, ritual, and engineered wonder",
-      title: "A traveler enters a city of bells. A legend returns with fire.",
+      title: "At the End of the Road",
       description:
-        "PAI is a rich, immersive book showcase built around atmosphere, worldbuilding, and the slow tension of a city that changes everyone who enters it.",
+        "The path rose into the mountains, and the city appeared beyond it. A long road through dust and stone leads to a city where bells carry across the air, and every wall, every light, and every quiet system feels carefully made, waiting to be understood.",
       primaryAction: {
         label: "Start an inquiry",
         href: "/contact#contact",
@@ -106,32 +115,31 @@ export const siteContent = {
       },
       stats: [
         { value: "32", label: "chapter journey" },
-        { value: "241", label: "page manuscript" },
+        { value: "241", label: "pages" },
         { value: "1", label: "outsider at the center" },
       ],
-      note:
-        "Built from the visual language of the cover: parchment warmth, antique gold, copper detail, and ceremonial structure.",
+      note: null,
     },
     authorIntro: {
-      eyebrow: "About the author",
-      title: "Writing toward atmosphere, order, and human pressure",
+      eyebrow: "About the Author",
+      title: "From Village Roots to Research and Writing",
       description:
-        "This site introduces the author through the same lens as the book itself: immersive environments, crafted systems, and emotional stakes that unfold through place.",
+        "Alireza Kakoee was born in 1980 in a small village in Iran's Kerman province. His family name traces back to a larger tribe that once governed parts of western Iran, carrying a history shaped by movement before settling in the place where he was born. He grew up in this environment and later continued his education in larger cities. After completing high school and university, he began working in the mining industry, gaining experience across different environments and stages of life. He later pursued higher academic studies and, in 2022, moved to Vaasa, Finland, as a postdoctoral researcher in the field of energy. He now lives there with his family, continuing both his research and writing.",
       pillars: [
         {
-          title: "World-first storytelling",
+          title: "Environment as a Catalyst for Change",
           description:
-            "Settings are not decorative. They carry belief, power, and daily habit.",
+            "Alireza's worlds aren't passive settings they actively influence the characters, transforming their perceptions and actions. The environment is a driving force that propels the narrative forward.",
         },
         {
-          title: "Quiet, accumulating tension",
+          title: "Exploration of Rituals and Power",
           description:
-            "The story favors atmosphere and discovery before opening into larger conflict.",
+            "His writing delves into the everyday rituals and systems that govern societies. These unseen forces shape the characters' experiences, often without them being fully aware of their impact.",
         },
         {
-          title: "Craft as identity",
+          title: "Intimate yet Vast Worlds",
           description:
-            "Architecture, labor, tools, and ritual all shape character and belonging.",
+            "Alireza's stories combine personal, intimate experiences with expansive, immersive worlds. Readers are invited to explore the internal and external landscapes of his characters, where both their personal growth and their interactions with the world around them unfold.",
         },
       ],
       action: {
@@ -140,25 +148,25 @@ export const siteContent = {
       },
     },
     bookIntro: {
-      eyebrow: "About the book",
-      title: "An immersive novel built from gates, windmills, temples, and myth",
+      eyebrow: "About the Book",
+      title: "A Journey Shaped by Road, Distance, and Arrival",
       description:
-        "PAI follows Arjan as he moves from wandering traveler to invested witness inside a city whose beauty, order, and danger all seem inseparable.",
+        "PAI follows a traveler who crosses barren land and mountain paths before reaching a distant city, one that reveals itself over time through its structures, its people, and its quiet routines. What begins as arrival becomes a deeper engagement with a place that feels both ordered and unfamiliar.",
       facets: [
         {
-          title: "A city of systems",
+          title: "A city built with intention",
           description:
-            "Bells regulate time, institutions shape movement, and every structure feels intentional.",
+            "From its gates and walls to its windmills and temples, every part of the city appears carefully made. Bells sound across its spaces with purpose, and movement follows them as if the rhythm has long been understood.",
         },
         {
-          title: "An outsider's gaze",
+          title: "Seeing from the outside",
           description:
-            "Arjan sees the city as both wonder and puzzle, which makes discovery the engine of the narrative.",
+            "The city is not revealed at once; it is encountered through narrow paths, brief exchanges, and the steady repetition of daily work that gradually forms a pattern.",
         },
         {
-          title: "A myth made real",
+          title: "Rituals and the weight they carry",
           description:
-            "The late conflict around Ripu reframes the city's rituals as preparations for something much larger.",
+            "Daily life moves with a steady rhythm, guided by practices that remain unquestioned. At certain moments, that rhythm shifts — workers pause, attention turns, and the usual flow gives way to something more deliberate, suggesting a meaning that is felt rather than explained.",
         },
       ],
       action: {
@@ -168,15 +176,15 @@ export const siteContent = {
     },
     testimonialHeading: {
       eyebrow: "Testimonials",
-      title: "Reserved for real reader and editorial responses",
+      title: "What readers are saying about PAI",
       description:
-        "These cards are intentionally marked as placeholders so the client can review the layout without presenting invented praise as fact.",
+        "Voices from readers who have experienced the journey, the city, and the world within.",
     },
     cta: {
-      eyebrow: "Project inquiries",
-      title: "Ready to present the book, the author, or both together?",
+      eyebrow: "Start a conversation",
+      title: "Inspired by the journey? Let the bells connect us.",
       description:
-        "Use the contact page to prepare publishing conversations, event outreach, or a polished author introduction for readers, editors, and collaborators.",
+        "Use this space to reach out about the story, publishing, events, collaborations, or interviews.",
       primaryAction: {
         label: "Open contact",
         href: "/contact#contact",
@@ -188,17 +196,17 @@ export const siteContent = {
     },
     contactSection: {
       eyebrow: "Contact",
-      title: "Use this space for early inquiries and project conversations",
+      title: "Write to us",
       description:
-        "Keep the section visible on the home page so the site works as a concise author-and-book landing experience even before all assets are final.",
+        "Use this space to reach out about the story, publishing, events, collaborations, or interviews.",
     },
   },
   book: {
     hero: {
-      eyebrow: "Book page",
-      title: "PAI is a slow-burning encounter between ritual order and mythic disruption.",
+      eyebrow: "The Book",
+      title: "Inside the Story",
       description:
-        "The book page expands the premise, the reading experience, and the major tensions inside the story without turning the design into a static synopsis wall.",
+        "The story follows a traveler who reaches a distant city after a long and demanding journey. What begins as a brief stop gradually becomes a longer stay, as the city is experienced through its streets, its work, and its daily life — never understood all at once.",
       primaryAction: {
         label: "Ask about the book",
         href: "/contact#contact",
@@ -209,60 +217,62 @@ export const siteContent = {
       },
     },
     details: {
-      eyebrow: "Inside the story",
+      eyebrow: "Themes",
       title: "What the book offers",
       description:
-        "PAI works best when presented as a literary fantasy with strong sensory detail, patient worldbuilding, and a late pivot into political and mythic scale.",
+        "Over time, the place begins to form a pattern through its routines and the steady sound of bells that mark each day. What first feels unfamiliar becomes partly known, yet never fully explained, leaving the sense that the city holds more than it openly shows.",
       sections: [
         {
-          title: "The opening movement",
+          title: "A journey through presence",
           description:
-            "Arjan crosses desert and mountain into a city whose bells, gates, guesthouse, and civic order immediately suggest a larger system at work.",
+            "The road leads across dry land and rising paths into a city where movement follows a pattern. Through its streets, work, and daily routine, the traveler begins to understand the place — not all at once, but over time.",
         },
         {
-          title: "The worldbuilding core",
+          title: "A city of structure and rhythm",
           description:
-            "Temples, libraries, barracks, markets, workshops, and windmills deepen the sense that every material choice in the city reflects power and belief.",
+            "Gates open and close with purpose, bells sound across the day, and each part of the city appears carefully made. Its order is not explained — it is lived, repeated, and gradually familiar.",
         },
         {
-          title: "The human turn",
+          title: "Moments that carry",
           description:
-            "By moving toward farm life and routine labor, the book turns atmosphere into belonging and gives the larger conflict personal weight.",
+            "At certain times, the rhythm shifts. People pause, attention turns, and the ordinary flow of the city gives way to something more deliberate. These moments are not named, but they leave an impression that stays.",
         },
         {
-          title: "The final escalation",
+          title: "A stay that deepens",
           description:
-            "Ripu's arrival transforms a symbolic figure into an active threat, pushing the story from contemplation into confrontation.",
+            "What begins as passing through becomes something longer. The traveler remains, drawn not by a single event, but by the way the city slowly reveals itself — without ever fully doing so.",
         },
       ],
       pullQuote:
-        "At its heart, PAI is about what happens when a stranger stops passing through and starts belonging to a place built on rules older than he understands.",
+        "On entering the city where bells chime over gates and windmill blades turn, Arjan intends merely to pass through. But the city enfolds him into its systems, labor, and secret rhythms, until Ni'gu's presence exposes everything hidden.",
       tags: [
-        "Literary fantasy",
-        "Slow-burn discovery",
-        "Atmospheric worldbuilding",
-        "Ritual and power",
+        "The Journey",
+        "The City",
+        "Observation",
+        "Routine",
+        "Unspoken Moments",
       ],
     },
     testimonialHeading: {
       eyebrow: "Testimonials",
-      title: "A clear placeholder zone for future book endorsements",
+      title: "What readers are saying about PAI",
       description:
-        "Keep these ready for real beta reader, reviewer, or editorial quotes without implying approval that has not yet been given.",
+        "Voices from readers who have journeyed through the story and the world it holds.",
     },
     contactSection: {
       eyebrow: "Ask about the book",
-      title: "Use the contact section for rights, publicity, or reader-facing outreach",
+      title: "Write to us",
       description:
-        "This section should stay practical and visible, giving the book page a clear next step beyond simply reading about the story.",
+        "Use this space to reach out about the story, publishing, events, collaborations, or interviews.",
     },
   },
   author: {
     hero: {
-      eyebrow: "Author page",
-      title: "Alireza Kakoee writes fiction where place, ritual, and power shape the human story.",
+      eyebrow: "Author Page",
+      title:
+        "From a Desert Village to the City of Golden Bells",
       description:
-        "The author page should feel literary and grounded, presenting a writer whose work pays close attention to systems, atmosphere, and the emotional pressure of belonging.",
+        "Alireza Kakoee's path from rural Iran to an academic career in Finland has taken him through diverse landscapes and experiences — each one shaping his research and writing today.",
       primaryAction: {
         label: "Make an inquiry",
         href: "/contact#contact",
@@ -273,35 +283,36 @@ export const siteContent = {
       },
     },
     story: {
-      eyebrow: "Author detail",
-      title: "A writing approach rooted in environment and tension",
+      eyebrow: "Author's Approach",
+      title: "Alireza Kakoee's Approach to Immersive Storytelling",
       description:
-        "Instead of generic biography blocks, this page frames the author through process, thematic interests, and the kind of reader experience the work is built to create.",
+        "This page offers a deeper look into the author's approach, focusing on his process, themes, and the immersive experience he creates through his writing. Alireza Kakoee's stories take readers into environments where place becomes as influential as the characters, shaping their journeys and actions. His work is intricately woven with landscapes, rituals, and systems that breathe life into both the world and its inhabitants.",
       sections: [
         {
-          title: "Atmosphere before spectacle",
+          title: "Environment as a Catalyst for Change",
           description:
-            "The writing favors mood, architecture, and material detail so that tension grows from what a place feels like before what it openly declares.",
+            "Alireza's worlds aren't passive settings — they actively influence the characters, transforming their perceptions and actions. The environment is a driving force that propels the narrative forward.",
         },
         {
-          title: "Systems as storytelling",
+          title: "Exploration of Rituals and Power",
           description:
-            "Cities, labor, ceremonies, and institutions are treated as narrative forces rather than distant background information.",
+            "His writing delves into the everyday rituals and systems that govern societies. These unseen forces shape the characters' experiences, often without them being fully aware of their impact.",
         },
         {
-          title: "Belonging under pressure",
+          title: "Intimate yet Vast Worlds",
           description:
-            "Characters enter worlds as outsiders and slowly become implicated in the values, hierarchies, and myths around them.",
+            "Alireza's stories combine personal, intimate experiences with expansive, immersive worlds. Readers are invited to explore the internal and external landscapes of his characters, where both their personal growth and their interactions with the world around them unfold.",
         },
       ],
       quote:
-        "The strongest thread in the work is not speed. It is immersion: a sense that every wall, tool, bell, path, and rule has already shaped the lives inside the story.",
+        "The road had ended, but the silence had not. The city moved in ways I could not yet follow. And still, I chose to step forward.",
     },
     cta: {
-      eyebrow: "Author inquiries",
-      title: "Use the site to position the author for interviews, collaborations, or introductions",
+      eyebrow: "Connect",
+      title:
+        "Interested in interviews, collaborations, or conversations about the work?",
       description:
-        "The author page should support a professional first impression while still feeling thematically aligned with the book.",
+        "Reach out for publishing inquiries, event invitations, or any conversation inspired by the journey.",
       primaryAction: {
         label: "Go to contact",
         href: "/contact#contact",
@@ -313,64 +324,65 @@ export const siteContent = {
     },
     testimonialHeading: {
       eyebrow: "Testimonials",
-      title: "A reserved area for future endorsements about the author and the work",
+      title: "What readers are saying",
       description:
-        "These placeholders should remain visibly temporary until approved praise or professional testimonials are available.",
+        "Voices from readers who have experienced the journey and the world within.",
     },
     contactSection: {
       eyebrow: "Contact the author",
-      title: "Keep outreach simple, direct, and easy to update later",
+      title: "Let the bells connect us",
       description:
-        "Use this section for introductions, media requests, collaborative opportunities, or conversations around the book and the broader author platform.",
+        "Use this space to reach out about the story, publishing, events, collaborations, or interviews.",
     },
   },
   contactPage: {
     hero: {
-      eyebrow: "Contact page",
-      title: "Open the conversation with a simple, purposeful contact experience.",
+      eyebrow: "Contact",
+      title:
+        "Start a conversation inspired by the journey, simple, clear, and meaningful.",
       description:
-        "This page is built for inquiries first. Keep the design calm and usable, with clear direct-contact placeholders and a form that is ready for backend wiring later.",
+        "This page is created for thoughtful readers. Keep the space simple and clear, offering a way to connect, ask, and reflect on the moments, symbols, and truths within the story.",
       primaryAction: {
-        label: "Jump to the form",
+        label: "Write to us",
         href: "#contact",
       },
       secondaryAction: {
-        label: "Back to home",
+        label: "Back to the journey",
         href: "/",
       },
     },
     section: {
       eyebrow: "Get in touch",
-      title: "Use this page for publishing, event, collaboration, or interview requests",
+      title: "Let the bells connect us",
       description:
-        "The form is fully designed and client-side validated. Until the backend is connected, the page should clearly communicate that submission is not yet live.",
+        "Use this space to reach out about the story, publishing, events, collaborations, or interviews.",
     },
   },
   seo: {
     siteUrl: "https://example.com",
     defaultTitle: "PAI | Author and Book Showcase",
     defaultDescription:
-      "A Next.js showcase for PAI and author Alireza Kakoee, designed around literary atmosphere, ritual worldbuilding, and a warm cover-led visual identity.",
+      "Where the desert ends, the story begins. Discover PAI by Alireza Kakoee — a journey through dust and stone to a city of bells, rituals, and hidden meaning.",
     pages: {
       home: {
         title: "PAI | Home",
         description:
-          "Discover the world of PAI, a literary fantasy centered on atmosphere, ritual, and a city built on bells, craft, and myth.",
+          "At the End of the Road — a long road through dust and stone leads to a city where bells carry across the air, and every quiet system feels carefully made.",
       },
       book: {
         title: "PAI | Book",
         description:
-          "Explore the premise, themes, and reading experience of PAI, a slow-burning literary fantasy about belonging and disruption.",
+          "Inside the Story — the story follows a traveler who reaches a distant city after a long and demanding journey. Explore the themes, rhythms, and world of PAI.",
       },
       author: {
         title: "PAI | Author",
         description:
-          "Meet Alireza Kakoee and the authorial approach behind PAI: immersive settings, crafted systems, and slow-building tension.",
+          "From a Desert Village to the City of Golden Bells — Alireza Kakoee's path from rural Iran to an academic career in Finland, and the immersive worlds he creates.",
       },
       contact: {
         title: "PAI | Contact",
         description:
-          "Reach out for publishing, interview, reading, or collaboration inquiries connected to PAI and its author.",
+          "Start a conversation inspired by the journey. Reach out about the story, publishing, events, collaborations, or interviews.",
       },
     },
   },
@@ -385,7 +397,12 @@ export const siteContent = {
       src: "/imgs/back-cover.jpg",
       alt: "Back cover artwork for PAI",
     },
-    authorPortrait: null,
+    authorPortrait: {
+      src: "/imgs/author.png",
+      alt: "Portrait of Alireza Kakoee",
+      width: 2625,
+      height: 3500,
+    },
     buyLink: null,
   },
 };

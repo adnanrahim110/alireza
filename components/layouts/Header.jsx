@@ -24,7 +24,6 @@ export default function Header() {
     setOpen(false);
   }, [pathname]);
 
-  // Lock body scroll when mobile menu is open
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
     return () => {
@@ -35,14 +34,14 @@ export default function Header() {
   return (
     <header
       className={cn(
-        "fixed top-0 left-0 right-0 z-50 transition-all duration-500",
+        "fixed top-0 left-0 right-0 z-50 transition-all duration-500 border-b",
         hidden && !reduceMotion && "-translate-y-full",
         scrolled
-          ? "border-b border-gold-300/15 bg-soot-950/80 backdrop-blur-xl"
-          : "bg-transparent",
+          ? "border-gold-300/15 bg-soot-950/80 backdrop-blur-xl"
+          : "border-transparent bg-transparent",
       )}
     >
-      <div className="mx-auto flex w-full max-w-[1320px] items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex w-full max-w-330 items-center justify-between gap-4 px-4 py-4 sm:px-6 lg:px-8">
         <Link className="flex items-center gap-3" href="/">
           <div className="relative h-12 w-10 overflow-hidden rounded-[0.95rem] border border-gold-300/30 bg-soot-900 shadow-[0_8px_20px_rgba(0,0,0,0.25)]">
             <Image
@@ -71,7 +70,7 @@ export default function Header() {
               <Link
                 key={link.href}
                 className={cn(
-                  "rounded-full px-4 py-2 text-sm font-medium transition",
+                  "rounded-full px-4 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400/50 focus-visible:ring-offset-2 focus-visible:ring-offset-soot-950",
                   isActive
                     ? "bg-gold-400/20 text-gold-200 shadow-[0_4px_16px_rgba(207,174,64,0.1)]"
                     : "text-sand-200/70 hover:bg-sand-100/8 hover:text-sand-50",
@@ -85,7 +84,7 @@ export default function Header() {
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="/contact#contact" size="sm" tone="gold">
+          <Button href="/contact#contact" size="sm" tone="gold" dark>
             Inquire
           </Button>
         </div>
@@ -93,7 +92,7 @@ export default function Header() {
         <button
           aria-expanded={open}
           aria-label="Toggle navigation"
-          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sand-100/15 bg-soot-900/50 text-sand-100 backdrop-blur-md lg:hidden"
+          className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-sand-100/15 bg-soot-900/50 text-sand-100 backdrop-blur-md transition hover:bg-sand-100/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400/50 lg:hidden"
           onClick={() => setOpen((current) => !current)}
           type="button"
         >
@@ -113,7 +112,7 @@ export default function Header() {
           >
             <button
               aria-label="Close navigation"
-              className="absolute top-4 right-4 inline-flex h-11 w-11 items-center justify-center rounded-full border border-sand-100/15 text-sand-100 sm:top-5 sm:right-6"
+              className="absolute top-5 right-5 inline-flex h-12 w-12 items-center justify-center rounded-full border border-sand-100/15 text-sand-100 transition hover:bg-sand-100/8 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-gold-400/50 sm:top-5 sm:right-6"
               onClick={() => setOpen(false)}
               type="button"
             >
@@ -162,6 +161,7 @@ export default function Header() {
                 href="/contact#contact"
                 size="lg"
                 tone="gold"
+                dark
                 onClick={() => setOpen(false)}
               >
                 Start an inquiry

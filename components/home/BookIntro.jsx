@@ -14,10 +14,9 @@ export default function BookIntro() {
 
   return (
     <section className="section-light">
-      <div className="section-shell py-16 sm:py-20 lg:py-24">
-        <div className="grid gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-14">
-          {/* Left — text + facets */}
-          <div className="space-y-8">
+      <div className="section-shell">
+        <div className="grid gap-8 md:grid-cols-2 md:gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:items-start lg:gap-14">
+          <div className="space-y-6 sm:space-y-8">
             <Reveal>
               <SectionHeading
                 description={bookIntro.description}
@@ -26,15 +25,15 @@ export default function BookIntro() {
               />
             </Reveal>
 
-            <div className="grid gap-4">
+            <div className="grid gap-3 sm:gap-4">
               {bookIntro.facets.map((facet, index) => {
                 const Icon = icons[index];
 
                 return (
                   <Reveal key={facet.title} delay={index * 0.06}>
-                    <div className="rounded-2xl border border-gold-300/35 bg-sand-50/65 px-5 py-5">
+                    <div className="rounded-2xl border border-gold-300/35 bg-sand-50/65 px-4 py-4 transition-colors duration-300 hover:border-gold-300/55 hover:bg-sand-50/85 sm:px-5 sm:py-5">
                       <IconBadge icon={Icon} label={facet.title} />
-                      <p className="mt-4 text-base leading-8 text-soot-800">
+                      <p className="mt-3 text-[0.92rem] leading-7 text-soot-800 sm:mt-4 sm:text-base sm:leading-8">
                         {facet.description}
                       </p>
                     </div>
@@ -50,18 +49,15 @@ export default function BookIntro() {
             </Reveal>
           </div>
 
-          {/* Right — image + quote */}
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8">
             <Reveal delay={0.08} variant="slide-right">
-              <div className="relative aspect-[4/5] overflow-hidden rounded-[1.75rem] border border-gold-300/50 bg-gold-100 shadow-[0_24px_60px_rgba(82,36,9,0.1)]">
-                <Image
-                  alt={siteContent.assets.backCover.alt}
-                  className="object-cover"
-                  fill
-                  sizes="(min-width: 1024px) 40vw, 100vw"
-                  src={siteContent.assets.backCover.src}
-                />
-              </div>
+              <Image
+                alt={siteContent.assets.backCover.alt}
+                width={1080}
+                height={1080}
+                className="w-full h-auto rounded-2xl"
+                src={siteContent.assets.backCover.src}
+              />
             </Reveal>
 
             <Reveal delay={0.14}>

@@ -16,12 +16,12 @@ export default function CTASection({
       <Glow
         color="copper"
         size="22rem"
-        className="-right-16 bottom-0 opacity-30"
+        className="-right-16 bottom-0 opacity-30 glow-hide-mobile"
       />
 
-      <div className="section-shell relative z-10 py-20 sm:py-24 lg:py-28">
+      <div className="section-shell relative z-10 py-16 sm:py-24 lg:py-28">
         <Reveal>
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+          <div className="grid gap-8 sm:gap-10 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
             <SectionHeading
               description={description}
               eyebrow={eyebrow}
@@ -30,7 +30,7 @@ export default function CTASection({
             />
             <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap lg:justify-end">
               {primaryAction ? (
-                <Button href={primaryAction.href} size="lg" tone="gold" glow>
+                <Button href={primaryAction.href} size="lg" tone="gold" glow dark className="w-full sm:w-auto">
                   {primaryAction.label}
                 </Button>
               ) : null}
@@ -39,7 +39,9 @@ export default function CTASection({
                   href={secondaryAction.href}
                   size="lg"
                   variant="ghost"
-                  className="text-sand-200/80 border-sand-200/15 hover:bg-sand-100/8 hover:text-sand-50"
+                  tone="soot"
+                  dark
+                  className="w-full sm:w-auto"
                 >
                   {secondaryAction.label}
                 </Button>

@@ -91,8 +91,8 @@ export default function ContactForm({ notice }) {
         value={values.message}
       />
       {showNotice ? <FormNotice tone="warning">{notice}</FormNotice> : null}
-      <div className="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
-        <Button size="lg" type="submit">
+      <div className="flex flex-col gap-3 pt-1 sm:flex-row sm:items-center sm:justify-between">
+        <Button size="lg" type="submit" className="w-full sm:w-auto">
           Review inquiry
         </Button>
       </div>

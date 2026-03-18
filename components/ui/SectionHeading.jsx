@@ -21,7 +21,7 @@ export default function SectionHeading({
       ) : null}
       <h2
         className={cn(
-          "font-heading text-[2rem] leading-[1.12] sm:text-[2.55rem] lg:text-[3.25rem]",
+          "font-heading text-[1.75rem] leading-[1.12] sm:text-[2.55rem] lg:text-[3.25rem]",
           dark ? "text-sand-50" : "text-soot-900",
         )}
       >
@@ -30,7 +30,7 @@ export default function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "max-w-2xl text-[1rem] leading-8 sm:text-[1.06rem]",
+            "max-w-2xl text-[0.95rem] leading-7 sm:text-[1.06rem] sm:leading-8",
             dark ? "text-sand-200/65" : "text-soot-600",
           )}
         >

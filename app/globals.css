@@ -185,11 +185,16 @@
 
 @layer utilities {
   .section-shell {
-    @apply mx-auto w-full max-w-[1320px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
+    @apply mx-auto w-full max-w-[1320px] px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
   }
 
   .section-shell-narrow {
-    @apply mx-auto w-full max-w-[1180px] px-4 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
+    @apply mx-auto w-full max-w-[1180px] px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
+  }
+
+  /* Hide decorative glows on very small screens for performance */
+  .glow-hide-mobile {
+    @apply hidden sm:block;
   }
 }
 
@@ -202,19 +207,63 @@
 }
 
 /* ---- Testimonial slider states ---- */
+
+/*
+  --content-ratio (0–1) is set per-slide via inline style.
+  Width scales between --tst-min-w and --tst-max-w so shorter
+  quotes get narrower cards and longer quotes get wider ones.
+  Height is locked to the shortest card by JS.
+*/
+.testimonial-slider {
+  --tst-min-w: 260px;
+  --tst-max-w: 340px;
+}
+
+@media (min-width: 520px) {
+  .testimonial-slider {
+    --tst-min-w: 280px;
+    --tst-max-w: 400px;
+  }
+}
+
+@media (min-width: 768px) {
+  .testimonial-slider {
+    --tst-min-w: 300px;
+    --tst-max-w: 460px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .testimonial-slider {
+    --tst-min-w: 320px;
+    --tst-max-w: 500px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .testimonial-slider {
+    --tst-min-w: 340px;
+    --tst-max-w: 540px;
+  }
+}
+
+.testimonial-slider .tst-slide {
+  height: auto;
+  width: calc(
+    var(--tst-min-w) + var(--content-ratio) * (var(--tst-max-w) - var(--tst-min-w))
+  );
+}
+
 .testimonial-slider .swiper-slide {
   opacity: 0.35;
-  transform: scale(0.9);
   filter: blur(1px);
   transition:
     opacity 0.6s cubic-bezier(0.22, 1, 0.36, 1),
-    transform 0.6s cubic-bezier(0.22, 1, 0.36, 1),
     filter 0.6s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .testimonial-slider .swiper-slide-active {
   opacity: 1;
-  transform: scale(1);
   filter: blur(0);
 }
 
@@ -228,28 +277,37 @@
 .testimonial-slider .swiper-slide-prev,
 .testimonial-slider .swiper-slide-next {
   opacity: 0.6;
-  transform: scale(0.95);
   filter: blur(0);
 }
 
-/* Pagination bullets */
+/* Pagination bullets — bigger touch targets on mobile */
 .tst-bullet {
   display: inline-block;
-  width: 1.8rem;
-  height: 2px;
+  width: 2rem;
+  height: 3px;
   border-radius: 9999px;
-  background: rgba(251, 220, 138, 0.12);
+  background: rgba(251, 220, 138, 0.15);
   cursor: pointer;
   transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  padding: 8px 0;
+  background-clip: content-box;
 }
 
 .tst-bullet:hover {
-  background: rgba(251, 220, 138, 0.3);
+  background: rgba(251, 220, 138, 0.35);
+  background-clip: content-box;
+}
+
+.tst-bullet:focus-visible {
+  outline: 2px solid rgba(207, 174, 64, 0.5);
+  outline-offset: 2px;
+  border-radius: 4px;
 }
 
 .tst-bullet-active {
-  width: 2.8rem;
+  width: 3rem;
   background: rgba(207, 174, 64, 0.65);
+  background-clip: content-box;
 }
 
 /* Autoplay progress */

@@ -18,7 +18,7 @@ export default function FloatingBook({ src, alt, width, height, sizes }) {
   return (
     <div
       ref={containerRef}
-      className="relative mx-auto w-full max-w-[17rem]"
+      className="relative mx-auto w-full max-w-[14rem] sm:max-w-[17rem]"
       style={{ perspective: "1200px" }}
     >
       {/* atmospheric glow behind the book */}
