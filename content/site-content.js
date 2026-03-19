@@ -4,7 +4,7 @@ export const siteContent = {
     name: "Alireza Kakoee",
     role: "Author of Immersive Speculative Worlds",
     summary:
-      "Alireza Kakoee creates speculative fiction that examines the delicate balance between human life and the spaces we inhabit. His stories reveal how environments, shaped by culture, labor, and tradition, influence the choices and struggles of those who live within them.",
+      "A pure fiction that examines the delicate balance between human life and the spaces we inhabit. This story revealed how environments, shaped by culture, labor, and tradition, influence the choices and struggles of those who live within them.",
     focus: [
       "The Power of Observation: Alireza's characters often understand their world not through direct explanation, but by observing, reflecting, and experiencing the environment around them.",
       "A Slow Unraveling of Place: His narratives emphasize a gradual discovery of place, where the true nature of a world is revealed piece by piece.",

@@ -82,10 +82,6 @@ export default function AuthorIntro() {
                     );
                   })}
                 </div>
-                <p className="mt-4 text-sm leading-6 text-sand-200/60 sm:text-[0.95rem] sm:leading-7">
-                  Read the full author page for his background, academic path,
-                  and the ideas that shape his work.
-                </p>
               </div>
             </Reveal>
           </div>
