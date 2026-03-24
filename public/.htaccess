@@ -1,0 +1,29 @@
+Options -Indexes
+
+# Security: never allow direct access to env files
+<FilesMatch "^\.env(\..*)?$">
+  Require all denied
+</FilesMatch>
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Canonical domain: force https + non-www
+  RewriteCond %{HTTP_HOST} ^www\.mactubpub\.com$ [NC]
+  RewriteRule ^ https://mactubpub.com%{REQUEST_URI} [R=301,L]
+
+  RewriteCond %{HTTPS} !=on
+  RewriteRule ^ https://mactubpub.com%{REQUEST_URI} [R=301,L]
+
+  # Serve matching .html files when a clean URL (without extension) is requested.
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME}.html -f
+  RewriteRule ^(.+)$ $1.html [L]
+
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_FILENAME} !-l
+  RewriteRule . /index.html [L]
+</IfModule>

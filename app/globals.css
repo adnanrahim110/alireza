@@ -94,7 +94,6 @@
     @apply text-soot-800;
   }
 
-  /* ---- light panel ---- */
   .paper-panel {
     @apply rounded-[1.75rem] border border-gold-300/35;
     position: relative;
@@ -118,7 +117,6 @@
     position: relative;
   }
 
-  /* ---- dark panel ---- */
   .paper-panel-dark {
     @apply rounded-[1.75rem] border border-soot-700/40;
     position: relative;
@@ -144,14 +142,12 @@
     position: relative;
   }
 
-  /* ---- dark scene section ---- */
   .section-dark {
     position: relative;
     background-color: var(--color-soot-950);
     color: var(--color-sand-100);
   }
 
-  /* ---- light scene section ---- */
   .section-light {
     position: relative;
     background-color: var(--color-sand-50);
@@ -169,7 +165,6 @@
     @apply text-[0.7rem] font-semibold uppercase tracking-[0.28em] text-gold-300;
   }
 
-  /* ---- film grain overlay ---- */
   .grain {
     position: fixed;
     inset: 0;
@@ -185,14 +180,13 @@
 
 @layer utilities {
   .section-shell {
-    @apply mx-auto w-full max-w-[1320px] px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
+    @apply mx-auto w-full max-w-330 px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
   }
 
   .section-shell-narrow {
-    @apply mx-auto w-full max-w-[1180px] px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
+    @apply mx-auto w-full max-w-295 px-5 py-12 sm:px-6 sm:py-16 lg:px-8 lg:py-20;
   }
 
-  /* Hide decorative glows on very small screens for performance */
   .glow-hide-mobile {
     @apply hidden sm:block;
   }
@@ -206,14 +200,6 @@
   background-size: 40px 40px;
 }
 
-/* ---- Testimonial slider states ---- */
-
-/*
-  --content-ratio (0–1) is set per-slide via inline style.
-  Width scales between --tst-min-w and --tst-max-w so shorter
-  quotes get narrower cards and longer quotes get wider ones.
-  Height is locked to the shortest card by JS.
-*/
 .testimonial-slider {
   --tst-slide-w: min(86vw, 24rem);
 }
@@ -297,7 +283,6 @@
   }
 }
 
-/* Pagination bullets — bigger touch targets on mobile */
 .tst-bullet {
   display: inline-block;
   width: 2rem;

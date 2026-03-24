@@ -271,7 +271,7 @@ export const siteContent = {
       eyebrow: "Author Page",
       title: "About the Author",
       description:
-        "Alireza Kakoee was born in a small village in Iran, Kerman province, but his second name historically turn to a bigger tribe in Iran who were governed on west of Iran in a period of time. Because of that, his family name is still related to that tribe that took a path to reach the place where he was born in 1980. His mother says that he was born four days earlier than the date on his schedule. By the way he grew up on that city and after finishing high school and university in bigger cities he has started working as a new part of his life in a mining industry. He has experienced various life parts with different environments and friends. He could continue in higher educational studies, PhD, and he has came to Vaasa in 2022 to collaborate in research activity in energy as a postdoctoral researcher. He now in her recent part of his life lives with his family in Vaasa, Finland, since 2022.",
+        "Alireza Kakoee was born in a small village in Kerman province, Iran, but his second name historically comes from a larger tribe in Iran that once governed the western region. Because of this, his family name is still connected to that tribe, which eventually settled where he was born in 1980. His mother says he was born four days earlier than the date on his official record. His name was chosen by his grandmother on his mother’s side. He grew up in that city but completed high school and university in larger cities and began working in the mining industry.He has experienced different aspects of life in varied environments and with diverse friends.He could have continued higher education at the PhD level while working, and in 2022, he moved to Vaasa to collaborate on energy research as a postdoctoral researcher.Since then, he has been living with his family in Vaasa, Finland.",
       primaryAction: {
         label: "Make an inquiry",
         href: "/contact#contact",
@@ -358,7 +358,7 @@ export const siteContent = {
     },
   },
   seo: {
-    siteUrl: "https://example.com",
+    siteUrl: "https://mactubpub.com",
     defaultTitle: "PAI | Author and Book Showcase",
     defaultDescription:
       "Where the desert ends, the story begins. Discover PAI by Alireza Kakoee — a journey through dust and stone to a city of bells, rituals, and hidden meaning.",
@@ -407,20 +407,47 @@ export const siteContent = {
 };
 
 export function buildMetadata(pageKey) {
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || siteContent.seo.siteUrl;
+
   const page = siteContent.seo.pages[pageKey] ?? {
     title: siteContent.seo.defaultTitle,
     description: siteContent.seo.defaultDescription,
   };
 
+  const canonicalMap = {
+    home: "/",
+    book: "/book",
+    author: "/author",
+    contact: "/contact",
+  };
+
+  const canonicalPath = canonicalMap[pageKey] ?? "/";
+
   return {
-    metadataBase: new URL(siteContent.seo.siteUrl),
+    metadataBase: new URL(siteUrl),
     title: page.title,
     description: page.description,
+    alternates: {
+      canonical: canonicalPath,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        "max-image-preview": "large",
+        "max-snippet": -1,
+        "max-video-preview": -1,
+      },
+    },
+    authors: [{ name: siteContent.authorProfile.name }],
     openGraph: {
       title: page.title,
       description: page.description,
       siteName: siteContent.siteName,
       type: "website",
+      url: canonicalPath,
       images: [
         {
           url: siteContent.assets.cover.src,
