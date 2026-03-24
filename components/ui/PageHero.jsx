@@ -30,6 +30,7 @@ export default function PageHero({
   fullScreen = false,
   dark = false,
   className,
+  pClassName = "",
   children,
   boxClass = "",
 }) {
@@ -136,7 +137,10 @@ export default function PageHero({
           </motion.div>
 
           <motion.p
-            className="mt-6 max-w-2xl text-[0.95rem] leading-[1.8] text-sand-200/65 sm:mt-7 sm:text-[1.08rem] sm:leading-[1.85]"
+            className={cn(
+              "mt-6 max-w-2xl text-[0.95rem] leading-[1.8] text-sand-200/65 sm:mt-7 sm:text-[1.08rem] sm:leading-[1.85]",
+              pClassName,
+            )}
             initial={reduceMotion ? false : { opacity: 0, y: 18 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{
@@ -174,7 +178,7 @@ export default function PageHero({
               <Button
                 href={secondaryAction.href}
                 size="lg"
-                variant="ghost"
+                variant="outline"
                 tone="gold"
                 dark
                 className="w-full sm:w-auto"
@@ -218,7 +222,9 @@ export default function PageHero({
 
           {note ? (
             <motion.p
-              className="mt-6 max-w-lg text-[0.82rem] leading-7 text-sand-200/30"
+              className={cn(
+                "mt-6 max-w-lg text-[0.82rem] leading-7 text-sand-200/30",
+              )}
               initial={reduceMotion ? false : { opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ duration: 0.7, ...stagger(7) }}

@@ -22,7 +22,6 @@ const previewItems = [
 
 export default function AuthorIntro() {
   const { authorIntro } = siteContent.home;
-  const { authorProfile } = siteContent;
 
   return (
     <section className="section-dark relative overflow-hidden">
@@ -41,11 +40,9 @@ export default function AuthorIntro() {
               dark
             />
             <p className="mt-6 max-w-2xl text-base leading-8 text-sand-200/70">
-              {authorProfile.name} was born in Kerman province, Iran, and now
-              lives in Vaasa, Finland, where he continues his work in energy
-              research alongside his writing. His fiction is shaped by lived
-              experience across places, close observation, and the ways
-              environment influences human life.
+              Alireza Kakoee was born in Kerman province, Iran, and now lives
+              in Vaasa, Finland, where he continues his work in energy research
+              alongside his writing.
             </p>
             <div className="mt-7">
               <Button

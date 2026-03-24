@@ -124,7 +124,7 @@ export const siteContent = {
       eyebrow: "About the Author",
       title: "From Village Roots to Research and Writing",
       description:
-        "Alireza Kakoee was born in 1980 in a small village in Iran's Kerman province. His family name traces back to a larger tribe that once governed parts of western Iran, carrying a history shaped by movement before settling in the place where he was born. He grew up in this environment and later continued his education in larger cities. After completing high school and university, he began working in the mining industry, gaining experience across different environments and stages of life. He later pursued higher academic studies and, in 2022, moved to Vaasa, Finland, as a postdoctoral researcher in the field of energy. He now lives there with his family, continuing both his research and writing.",
+        "Alireza Kakoee was born in Kerman province, Iran, and now lives in Vaasa, Finland, where he continues his work in energy research alongside his writing.",
       pillars: [
         {
           title: "Environment as a Catalyst for Change",
@@ -269,10 +269,9 @@ export const siteContent = {
   author: {
     hero: {
       eyebrow: "Author Page",
-      title:
-        "From a Desert Village to the City of Golden Bells",
+      title: "About the Author",
       description:
-        "Alireza Kakoee's path from rural Iran to an academic career in Finland has taken him through diverse landscapes and experiences — each one shaping his research and writing today.",
+        "Alireza Kakoee was born in a small village in Iran, Kerman province, but his second name historically turn to a bigger tribe in Iran who were governed on west of Iran in a period of time. Because of that, his family name is still related to that tribe that took a path to reach the place where he was born in 1980. His mother says that he was born four days earlier than the date on his schedule. By the way he grew up on that city and after finishing high school and university in bigger cities he has started working as a new part of his life in a mining industry. He has experienced various life parts with different environments and friends. He could continue in higher educational studies, PhD, and he has came to Vaasa in 2022 to collaborate in research activity in energy as a postdoctoral researcher. He now in her recent part of his life lives with his family in Vaasa, Finland, since 2022.",
       primaryAction: {
         label: "Make an inquiry",
         href: "/contact#contact",
@@ -377,7 +376,7 @@ export const siteContent = {
       author: {
         title: "PAI | Author",
         description:
-          "From a Desert Village to the City of Golden Bells — Alireza Kakoee's path from rural Iran to an academic career in Finland, and the immersive worlds he creates.",
+          "Alireza Kakoee was born in a small village in Iran, Kerman province, but his second name historically turn to a bigger tribe in Iran who were governed on west of Iran in a period of time.",
       },
       contact: {
         title: "PAI | Contact",
@@ -439,3 +438,4 @@ export function buildMetadata(pageKey) {
     },
   };
 }
+

@@ -4,7 +4,6 @@ import { siteContent } from "@/content/site-content";
 
 export default function AuthorHero() {
   const { hero } = siteContent.author;
-  const portrait = siteContent.assets.authorPortrait;
 
   return (
     <PageHero
@@ -14,8 +13,9 @@ export default function AuthorHero() {
       primaryAction={hero.primaryAction}
       secondaryAction={hero.secondaryAction}
       title={hero.title}
+      pClassName="max-w-[57rem]"
     >
-      <div className="relative space-y-4 sm:space-y-5">
+      <div className="relative space-y-4 sm:space-y-5 maxw4">
         <IconBadge label="Author profile" tone="gold" />
 
         <div className="rounded-[1.35rem] border border-gold-300/30 bg-sand-50/65 p-4 backdrop-blur-sm sm:p-6">

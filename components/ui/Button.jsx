@@ -5,18 +5,15 @@ const DEFAULT_VARIANT = "solid";
 const DEFAULT_TONE = "copper";
 const DEFAULT_SIZE = "md";
 
-/* ——— Base classes shared by every button ——— */
 const baseClasses =
   "inline-flex items-center justify-center gap-2 rounded-full border font-medium tracking-[0.01em] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50";
 
-/* ——— Variant base classes (mode-independent) ——— */
 const variantBase = {
   solid: "border-transparent shadow-[0_14px_30px_rgba(73,33,8,0.14)]",
   outline: "bg-transparent",
-  ghost: "border-transparent bg-transparent",
+  ghost: "border-transparent ",
 };
 
-/* ——— Tone × Variant × Mode (light / dark) ——— */
 const toneClasses = {
   copper: {
     solid: {
@@ -32,7 +29,7 @@ const toneClasses = {
     ghost: {
       light:
         "text-copper-700 hover:bg-copper-100/60 active:bg-copper-100 focus-visible:ring-copper-500/50 focus-visible:ring-offset-sand-50",
-      dark: "text-copper-300/80 hover:bg-copper-500/10 hover:text-copper-200 active:bg-copper-500/15 focus-visible:ring-copper-400/50 focus-visible:ring-offset-soot-950",
+      dark: "text-copper-300/80 bg-copper-500/10 hover:bg-copper-500/10 hover:text-copper-200 active:bg-copper-500/15 focus-visible:ring-copper-400/50 focus-visible:ring-offset-soot-950",
     },
   },
   gold: {
@@ -49,7 +46,7 @@ const toneClasses = {
     ghost: {
       light:
         "text-gold-700 hover:bg-gold-100/60 active:bg-gold-100 focus-visible:ring-gold-500/50 focus-visible:ring-offset-sand-50",
-      dark: "text-gold-300/80 hover:bg-gold-500/10 hover:text-gold-200 active:bg-gold-500/15 focus-visible:ring-gold-400/50 focus-visible:ring-offset-soot-950",
+      dark: "text-gold-300/80 bg-gold-500/10 hover:bg-gold-500/10 hover:text-gold-200 active:bg-gold-500/15 focus-visible:ring-gold-400/50 focus-visible:ring-offset-soot-950",
     },
   },
   soot: {
@@ -66,7 +63,7 @@ const toneClasses = {
     ghost: {
       light:
         "text-soot-700 hover:bg-soot-100/60 active:bg-soot-100 focus-visible:ring-soot-500/45 focus-visible:ring-offset-sand-50",
-      dark: "text-sand-200/70 hover:bg-sand-100/6 hover:text-sand-50 active:bg-sand-100/10 focus-visible:ring-sand-300/30 focus-visible:ring-offset-soot-950",
+      dark: "text-sand-200/70 bg-sand-100/6 hover:bg-sand-100/10 hover:text-sand-50 active:bg-sand-100/12 focus-visible:ring-sand-300/30 focus-visible:ring-offset-soot-950",
     },
   },
 };
@@ -107,7 +104,14 @@ export default function Button({
   className,
   ...props
 }) {
-  const classes = resolveClasses({ variant, tone, size, dark, glow, className });
+  const classes = resolveClasses({
+    variant,
+    tone,
+    size,
+    dark,
+    glow,
+    className,
+  });
 
   if (href) {
     const isExternal = href.startsWith("http") || href.startsWith("mailto:");
