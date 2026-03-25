@@ -80,7 +80,7 @@ export default function PageHero({
         <div className="absolute bottom-0 h-16 w-full bg-linear-to-t from-gold-400/20 to-transparent sm:h-24" />
       </div>
 
-      <div className="relative z-10 mx-auto w-full max-w-330 px-5 py-20 sm:px-8 sm:py-28 lg:px-10 lg:py-36">
+      <div className="relative z-10 mx-auto w-full max-w-330 px-5 pt-36 pb-20 sm:px-8 sm:pb-28 lg:px-10 lg:py-36">
         <div className="flex flex-col items-center text-center">
           <motion.div
             initial={reduceMotion ? false : { opacity: 0, scale: 0.8 }}

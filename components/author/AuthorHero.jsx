@@ -13,7 +13,7 @@ export default function AuthorHero() {
       primaryAction={hero.primaryAction}
       secondaryAction={hero.secondaryAction}
       title={hero.title}
-      pClassName="max-w-[57rem]"
+      pClassName="max-w-[58rem] text-justify!"
     >
       <div className="relative space-y-4 sm:space-y-5 maxw4">
         <IconBadge label="Author profile" tone="gold" />

@@ -32,15 +32,13 @@ export default function Footer() {
       <div className="relative mx-auto grid w-full max-w-330 gap-8 px-5 py-10 sm:gap-10 sm:px-6 sm:py-14 lg:grid-cols-[1.3fr_0.7fr] lg:px-8">
         <div className="flex max-w-lg flex-col gap-5">
           <div className="flex items-center gap-4">
-            <div className="relative h-16 w-11 overflow-hidden rounded-2xl border border-gold-400/20 bg-soot-900">
-              <Image
-                alt={siteContent.assets.cover.alt}
-                className="object-cover"
-                fill
-                sizes="44px"
-                src={siteContent.assets.cover.src}
-              />
-            </div>
+            <Image
+              alt={siteContent.assets.logo.alt}
+              className="w-auto h-20"
+              width={720}
+              height={720}
+              src={siteContent.assets.logo.src}
+            />
             <div>
               <p className="font-heading text-2xl text-gold-300">
                 {siteContent.bookProfile.title}

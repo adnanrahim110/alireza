@@ -386,6 +386,12 @@ export const siteContent = {
     },
   },
   assets: {
+    logo: {
+      src: "/imgs/logo.png",
+      alt: "PAI logo",
+      width: 720,
+      height: 720,
+    },
     cover: {
       src: "/imgs/front-cover.png",
       alt: "Front cover artwork for PAI",

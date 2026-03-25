@@ -22,7 +22,7 @@ export default function AuthorStory() {
           </Reveal>
 
           <Reveal delay={0.06} variant="scale" className="h-full">
-            <div className="relative h-full w-full overflow-hidden rounded-[1.3rem] border border-gold-300/45 bg-gold-100">
+            <div className="relative h-full w-full max-lg:aspect-3/4 overflow-hidden rounded-[1.3rem] border border-gold-300/45 bg-gold-100">
               <Image
                 alt={portrait.alt}
                 className="object-cover object-top"
