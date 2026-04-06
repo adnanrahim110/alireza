@@ -115,7 +115,7 @@ export const siteContent = {
       },
       stats: [
         { value: "32", label: "chapter journey" },
-        { value: "241", label: "pages" },
+        { value: "340", label: "pages" },
         { value: "1", label: "outsider at the center" },
       ],
       note: null,
@@ -393,7 +393,7 @@ export const siteContent = {
       height: 720,
     },
     cover: {
-      src: "/imgs/front-cover.png",
+      src: "/imgs/front-cover.jpg",
       alt: "Front cover artwork for PAI",
       width: 1229,
       height: 1803,
