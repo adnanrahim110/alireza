@@ -83,8 +83,13 @@ export default function Header() {
           </nav>
 
           <div className="hidden lg:block">
-            <Button href="/contact#contact" size="sm" tone="gold" dark>
-              Inquire
+            <Button
+              href={siteContent.assets.buyLink}
+              size="sm"
+              tone="gold"
+              dark
+            >
+              Buy the book
             </Button>
           </div>
 
@@ -100,7 +105,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Full-screen mobile menu overlay (kept outside the header to avoid transform-related fixed positioning issues) */}
       <AnimatePresence>
         {open ? (
           <motion.div
@@ -158,13 +162,13 @@ export default function Header() {
               transition={{ delay: 0.35, duration: 0.4 }}
             >
               <Button
-                href="/contact#contact"
+                href={siteContent.assets.buyLink}
                 size="lg"
                 tone="gold"
                 dark
                 onClick={() => setOpen(false)}
               >
-                Start an inquiry
+                Buy the book
               </Button>
             </motion.div>
           </motion.div>

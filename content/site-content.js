@@ -1,3 +1,6 @@
+export const BOOK_PURCHASE_URL =
+  "https://www.amazon.com/dp/1970601639/ref=sr_1_2?crid=2HWIXDQOH5BMS&dib=eyJ2IjoiMSJ9.cjpbACMPFGMWu7RqYS4o-mXjpSwnLhDnWpBasfEk_Hc.ZyUQczKHaalgx5Tg3E6neab7QWO_6yZyhshfMEyDpf0&dib_tag=se&keywords=PAI+BY+alireza+kakoee&qid=1775678457&s=books&sprefix=pai+by+alireza+kakoee%2Cstripbooks%2C383&sr=1-2";
+
 export const siteContent = {
   siteName: "PAI",
   authorProfile: {
@@ -208,8 +211,8 @@ export const siteContent = {
       description:
         "The story follows a traveler who reaches a distant city after a long and demanding journey. What begins as a brief stop gradually becomes a longer stay, as the city is experienced through its streets, its work, and its daily life — never understood all at once.",
       primaryAction: {
-        label: "Ask about the book",
-        href: "/contact#contact",
+        label: "Buy Book on Amazon",
+        href: BOOK_PURCHASE_URL,
       },
       secondaryAction: {
         label: "Meet the author",
@@ -408,7 +411,7 @@ export const siteContent = {
       width: 2625,
       height: 3500,
     },
-    buyLink: null,
+    buyLink: BOOK_PURCHASE_URL,
   },
 };
 

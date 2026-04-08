@@ -43,9 +43,14 @@ export default function BookIntro() {
             </div>
 
             <Reveal>
-              <Button href={bookIntro.action.href}>
-                {bookIntro.action.label}
-              </Button>
+              <div className="flex flex-wrap gap-4 items-center">
+                <Button href={bookIntro.action.href}>
+                  {bookIntro.action.label}
+                </Button>
+                <Button href={siteContent.assets.buyLink} variant="outline">
+                  Buy Book on Amazon
+                </Button>
+              </div>
             </Reveal>
           </div>
 
