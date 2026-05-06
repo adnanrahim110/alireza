@@ -24,7 +24,7 @@ export default function BookHero() {
           width={siteContent.assets.cover.width}
         />
 
-        <div className="rounded-[1.35rem] border border-gold-300/20 bg-soot-900/55 p-4 backdrop-blur-sm sm:p-6">
+        <div className="rounded-[1.35rem] border text-center border-gold-300/20 bg-soot-900/55 p-4 backdrop-blur-sm sm:p-6">
           <IconBadge
             className="mx-auto lg:mx-0"
             label="Literary fantasy"

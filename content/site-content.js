@@ -118,7 +118,7 @@ export const siteContent = {
       },
       stats: [
         { value: "32", label: "chapter journey" },
-        { value: "340", label: "pages" },
+        { value: "349", label: "pages" },
         { value: "1", label: "outsider at the center" },
       ],
       note: null,
